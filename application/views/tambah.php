@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Home</title>
+  <title>Tambah</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -67,7 +67,7 @@
     <div class="container">
       <ol>
         <li><a href="<?php echo base_url();?>">Home</a></li>
-        <li>Data Peserta</li>
+        <li>Tambah Data</li>
       </ol>
     </div>
   </section><!-- End Breadcrumbs -->
@@ -77,48 +77,32 @@
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2>Data Peserta</h2>
-          <a href="<?php echo base_url();?>index.php/C_peserta/tambah" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
+          <h2>Tambah Peserta</h2>  
         </div>
-
-        <div class="row">
-          <div class="col-lg-12 entries">
+        <div class="row" align="align-items-center">
+          <div class="col-lg-5 entries">
             <article class="entry"> 
+                <form method="POST" action="insert/">
+                <div class="form-group">
+                  <label>Nama</label>
+                  <input type="text" class="form-control" name="nama">
+                </div>
+                <div class="form-group">
+                  <label>Kelas</label>
+                  <input type="text" class="form-control" name="kelas">
+                </div>
+                <div class="form-group">
+                  <label>Sekolah</label>
+                  <input type="text" class="form-control" name="sekolah">
+                </div>
+                <div class="form-group">
+                  <label>Asal Kota</label>
+                  <input type="text" class="form-control" name="asal_kota">
+                </div>
+                <a href="<?php echo base_url();?>" class="btn btn-info" style="float: left;"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+                <button type="submit" class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-floppy-disk"></span> Simpan</button>
                 <br>
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">No Peserta</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Kelas</th>
-                      <th scope="col">Sekolah</th>
-                      <th scope="col">Asal Kota</th>
-                    <th scope="col">Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                      foreach ($peserta as $pst) {
-                      ?>
-
-                    <tr>
-                      <th scope="row"><?php echo $pst->no_peserta; ?></th>
-                      <td><?php echo $pst->nama; ?></td>
-                      <td><?php echo $pst->kelas; ?></td>
-                      <td><?php echo $pst->sekolah; ?></td>
-                      <td><?php echo $pst->asal_kota; ?></td>
-                      <td>
-                        <a href="<?php echo base_url();?>index.php/C_peserta/ubah/<?php echo $pst->no_peserta;?>" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a href="<?php echo base_url();?>index.php/C_peserta/hapus/<?php echo $pst->no_peserta;?>" onclick="return confirm('Apakah anda yakin?')" class="btn btn-danger">
-                        <span class="glyphicon glyphicon-trash"></span></a>
-                      </td>
-                    </tr>
-                    
-                    <?php 
-                      }
-                     ?>   
-                  </tbody>
-                </table>
+              </form>
             </article><!-- End blog entry -->
           </div><!-- End blog entries list -->
         </div>
