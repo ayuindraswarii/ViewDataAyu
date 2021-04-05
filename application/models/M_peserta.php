@@ -25,5 +25,9 @@ class M_peserta extends CI_Model{
 			return $this->db->update('peserta', $pst);
 		}
 
+		public function delpst($no_peserta){
+			return $this->db->where('no_peserta', $no_peserta)->delete('peserta');
+		}
+		
 	}
 ?>

@@ -50,6 +50,14 @@ class C_peserta extends CI_Controller{
 			header('location:'.base_url().$this->index());
 		}
 	}
+
+	public function hapus($no_peserta){
+	  	$query=$this->M_peserta->delpst($no_peserta);
+	    
+	    if ($query) {
+			header('location:'.base_url().$this->index());
+		}
+	}
 }
 
 ?>
